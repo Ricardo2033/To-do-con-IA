@@ -1,1 +1,27 @@
-git
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tareas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Lista de Tareas</h1>
+    <form id="taskForm">
+      <input type="text" id="taskInput" placeholder="Agregar" required>
+      <input type="time" id="taskTime" required>
+  <button type="submit" class="animated-btn">Agregar tarea</button>
+    </form>
+    <section class="schedule-section">
+      <ul id="scheduleList"></ul>
+    </section>
+  </div>
+  <footer class="footer">
+    <p>Creado con por Ricardo</p>
+    <a href="https://github.com/Ricardo2033">Github</a>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+#scheduleList li.slide-fade-out {
+  animation: slideFadeOut 0.35s forwards;
+}
+
+@keyframes slideFadeOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  60% {
+    opacity: 0.7;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+}
+#scheduleList li.zoom-fade-out {
+  animation: zoomFadeOut 0.35s forwards;
+}
+
+@keyframes zoomFadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  60% {
+    opacity: 0.7;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+}
+#scheduleList li.fall-out {
+  animation: fallOut 0.4s forwards;
+}
+
+@keyframes fallOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  60% {
+    opacity: 0.7;
+    transform: translateY(10px) scale(0.98) rotate(-2deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.92) rotate(4deg);
+  }
+}
+#scheduleList li.break-out {
+  animation: breakOut 0.5s forwards;
+}
+
+@keyframes breakOut {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+  20% {
+    transform: rotate(-8deg) scale(1.05);
+  }
+  40% {
+    transform: rotate(12deg) scale(0.95);
+  }
+  60% {
+    transform: rotate(-16deg) scale(1.08);
+  }
+  80% {
+    opacity: 0.7;
+    transform: rotate(18deg) scale(0.8);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(24deg) scale(0.5) translateY(30px);
+  }
+}
+#scheduleList li.fade-out {
+  opacity: 0;
+  transform: translateX(40px) scale(0.95);
+  transition: opacity 0.35s, transform 0.35s;
+}
+body {
+  background: radial-gradient(ellipse at 60% 40%, #434c6f 0%, #6e7bb7 100%);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 400px;
+  margin: 60px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  padding: 32px 24px 24px 24px;
+}
+
+h1 {
+  text-align: center;
+  color: #4A90E2;
+  margin-bottom: 24px;
+}
+
+form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+form input[type="text"],
+form input[type="time"] {
+  min-width: 0;
+  flex: 1 1 0;
+}
+form button {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+input[type="text"], input[type="time"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #bfc9d8;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  background: #f6f8fa;
+  color: #2d3a4a;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  font-weight: 400;
+}
+input[type="text"]::placeholder, input[type="time"]::placeholder {
+  color: #a0aec0;
+  font-style: italic;
+  opacity: 1;
+}
+input[type="text"]:focus, input[type="time"]:focus {
+  border-color: #4A90E2;
+  box-shadow: 0 0 0 2px #4A90E233;
+  background: #fff;
+}
+
+button, .animated-btn {
+  background: #4A90E2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(74,144,226,0.12);
+}
+
+button:hover, .animated-btn:hover {
+  background: #357ABD;
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 3px 8px rgba(74,144,226,0.14);
+}
+
+#taskList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#taskList li {
+  background: #f5f7fa;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(74,144,226,0.07);
+}
+
+.remove-btn {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(231,76,60,0.10);
+}
+
+.remove-btn:hover {
+  background: #c0392b;
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 3px 8px rgba(231,76,60,0.16);
+}
+
+/* Sección de horario personalizado */
+.schedule-section {
+  margin-top: 32px;
+  background: #f8fafc;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(74,144,226,0.07);
+  padding: 20px 16px;
+}
+.schedule-section h2 {
+  color: #357ABD;
+  font-size: 20px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+#scheduleForm {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+#taskSelect, #taskTime {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #bfc9d8;
+  font-size: 16px;
+  box-sizing: border-box;
+  background: #f6f8fa;
+  color: #2d3a4a;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  font-weight: 400;
+}
+#taskSelect:focus, #taskTime:focus {
+  border-color: #4A90E2;
+  box-shadow: 0 0 0 2px #4A90E233;
+  background: #fff;
+}
+#scheduleList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#scheduleList li {
+  background: #eaf6fb;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(74,144,226,0.07);
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 18px 0 10px 0;
+  background: rgba(255,255,255,0.9);
+  color: #4A90E2;
+  font-size: 17px;
+  font-weight: 500;
+  border-top: 2px solid #ACB6E5;
+  box-shadow: 0 -2px 8px rgba(74,144,226,0.07);
+  z-index: 100;
+}
+.footer p {
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+a{
+    padding: 5px;
+    text-decoration: none;
+    color:#4A90E2;
+    font-size: 18px;
+}
